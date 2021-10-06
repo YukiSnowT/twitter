@@ -1,16 +1,34 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="all" style="display:flex;">
+    <div class="left" style="width:20%;"></div>
+    <div id="form" class="form" style="width:60%;">
+      <Form v-on:addTweeyo="setTweeyo"/>
+      <Tweet />
+    </div>
+    <div class="right" style="width:20%;"></div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Form from './components/Form.vue'
+import Tweet from './components/Tweet.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    Form,
+    Tweet
+  },
+  data(){
+    return {
+
+    }
+  },
+  methods: {
+    setTweeyo(msg){
+      console.log(msg);
+    }
+  },
 }
 </script>
 
